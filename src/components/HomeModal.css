@@ -1,0 +1,161 @@
+
+    .form-modal {
+        background-color: #0d0d0e;
+        opacity: 0.9;
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 100px 180px;
+        border: 2px solid black;
+        border-radius: 10px;
+        max-width: 80%; /* Establece el ancho máximo del modal */
+        width: 300px; /* Establece un ancho predeterminado para pantallas más pequeñas */
+        text-align: center;
+        margin: auto;
+        z-index: 999;
+    }
+  
+  /* Tamaños para tablets */
+  @media only screen and (max-width: 700px) {
+    .form-modal {
+      width: 20%  !important;
+      max-width: 80%  !important;
+    }
+    .label-book{
+      font-size: 28px !important;
+      margin-left: -90px  !important;
+      margin-right: auto !important;
+      display: block !important;
+    }
+    .input-form{
+      width: 250px !important;
+      margin-right: 20px !important;
+    }
+    .boton {
+      width: 80px !important;
+      margin-right: -120px !important;
+    }
+  }
+
+    /* Tamaños para celulares */
+    @media only screen and (max-width: 500px) {
+      .form-modal {
+        width: 1%  !important;
+      }
+      .label-book{
+        margin-left: -130px  !important;
+        margin-right: auto !important;
+        display: block !important;
+      }
+      .input-form{
+        width: 190px !important;
+        margin-right: 20px !important;
+        margin-left: -120px  !important;
+      }
+      .boton {
+        width: 80px !important;
+        margin-right: -140px !important;
+      }
+    }
+
+  .form-modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+    .form-modal label {
+    position: relative;
+    font-size: 45px; /* Tamaño de fuente normal */
+    color: rgb(255, 255, 255); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centrar el texto */
+    font-style: italic;
+    backdrop-filter: blur(10px); /* Aplica el desenfoque al fondo */
+    padding: 10px; /* Ajusta el espaciado interno según sea necesario */
+    letter-spacing: 4px;
+    z-index: 2000;
+    display: block;
+    width: 100%; /* Establece el ancho del label al 100% */
+    margin-top: -80px;
+    margin-bottom: 20px; 
+    margin-left: -80px;
+    white-space: nowrap;
+    }
+
+  
+  .form-modal input {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    font-size: 18px;
+    margin-left: -130px;
+  }
+  
+  .form-modal button {
+    padding: 10px;
+    background-color: #0d4ff5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+    margin: 0 auto;
+    margin-right: -40px;
+    margin-top: -44px;
+    opacity: 3 !important;
+    margin-bottom: -60px;
+    
+  }
+  
+  .form-modal button:hover {
+    background-color: #0056b3;
+  }
+    
+  .form-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px; /* Espacio entre el modal y las cartas */
+  }
+  
+  /* Estilos para el fondo detrás del modal */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: #4C75DA;*/
+    background-image: url('../../public/images/books1.jpg');
+    background-size: cover;
+    z-index: -1; /* Asegura que el fondo esté detrás del modal */
+  }
+
+  .input-form{
+    border-radius: 5px;
+    border-width: 2px;
+    border: black;
+  }
+
+  .input-form::placeholder {
+    font-size: 14px; /* Tamaño del texto del marcador de posición */
+    font-style: italic; /* Establece la cursiva */
+
+  }
+  
+
+ .cards-container{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 300px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap:20px;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+ }
+ 
