@@ -16,7 +16,9 @@ const HomeModal = ({ onSubmit }) => {
         event.preventDefault();
         if (book.trim() !== '') {
             try {
-                const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=AIzaSyDmX3Mdi3N0fC6rhylV1lZ3fdXiTSZLNyc`);
+                const apiKey = process.env.REACT_APP_KEY;
+                //console.log(apiKey);
+                const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`);
                 const data = await response.json();
                 setBooksList(data.items );
                 setModalIsOpen(true);       //mantengo siempre abierto el modal
