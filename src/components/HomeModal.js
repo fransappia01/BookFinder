@@ -17,17 +17,20 @@ const HomeModal = ({ onSubmit }) => {
         if (book.trim() !== '') {
             try {
                 const apiKey = process.env.REACT_APP_KEY;
-                //console.log(apiKey);
                 const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`);
                 const data = await response.json();
-                setBooksList(data.items );
-                setModalIsOpen(true);       //mantengo siempre abierto el modal
+                setBooksList(data.items);
             } catch (error) {
                 console.error('Error fetching books:', error);
             }
         } else {
             console.error("Se requiere nombre del libro");
         }
+    };
+
+    const handleCloseModal = () => {
+        setBooksList([]);
+        setBook('');
     };
 
     return (
@@ -49,8 +52,10 @@ const HomeModal = ({ onSubmit }) => {
                         value={book}
                         onChange={handleInputChange}
                     />
+                    <button className="close-button" onClick={handleCloseModal}>X</button>
                     <button className='boton' type="submit" disabled={!modalIsOpen}>Buscar</button>
                 </form>
+
             </Modal>
             <Card book={booksList} />
         </div>
